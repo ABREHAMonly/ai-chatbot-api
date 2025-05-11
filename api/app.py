@@ -17,18 +17,17 @@ class Config:
     MODEL_PATH = os.getenv('MODEL_PATH', 'chatbot_model.pkl')
     INTENTS_PATH = os.getenv('INTENTS_PATH', 'A.json')
     MAX_INPUT_LENGTH = int(os.getenv('MAX_INPUT_LENGTH', 500))
-    SESSION_TYPE = os.getenv('SESSION_TYPE', 'filesystem')
-    SESSION_FILE_DIR = os.getenv('SESSION_FILE_DIR', './flask_session')
+    SESSION_TYPE = os.getenv('SESSION_TYPE', 'filesystem')  # Changed default
+    SESSION_FILE_DIR = os.getenv('SESSION_FILE_DIR', './flask_session')  # New
     SECRET_KEY = os.getenv('SECRET_KEY', 'yudcslkknuhiurhqwpzvb')
     RATE_LIMIT = os.getenv('RATE_LIMIT', '5 per minute')
-    RATELIMIT_STORAGE_URI = os.getenv('RATELIMIT_STORAGE_URI', 'sqlite:///ratelimits.db')
 
 
 # Initialize Flask app
 app = Flask(__name__)
 app.config.from_object(Config)
 
-# Configure CORS
+# Configure CORS for your Netlify domain
 CORS(app, resources={
     r"/api/*": {
         "origins": ["https://abrehamyetwale.netlify.app"],
@@ -37,11 +36,10 @@ CORS(app, resources={
     }
 })
 
-# Configure rate limiting with SQLite
+# Configure rate limiting
 limiter = Limiter(
     app=app,
     key_func=get_remote_address,
-    storage_uri=app.config['RATELIMIT_STORAGE_URI'],
     default_limits=[app.config['RATE_LIMIT']]
 )
 
@@ -127,16 +125,6 @@ def handle_personalization(user_input, context, language):
     
     return None
 
-@app.route('/')
-def health_check():
-    response = jsonify({
-        "status": "healthy", 
-        "version": "1.0.0",
-        "rate_limit_storage": app.config['RATELIMIT_STORAGE_URI']
-    })
-    response.headers['Cache-Control'] = 'no-store'
-    return response
-    
 @app.route('/api/chat', methods=['POST'])
 @limiter.limit(app.config['RATE_LIMIT'])
 def chat():
