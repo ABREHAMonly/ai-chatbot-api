@@ -10,28 +10,29 @@ from fuzzywuzzy import fuzz
 from flask_cors import CORS
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
-from flask_session import Session  # For server-side sessions
+from flask_session import Session
+from sqlalchemy import create_engine
+from pathlib import Path
 
 # Configuration
 class Config:
     MODEL_PATH = os.getenv('MODEL_PATH', 'chatbot_model.pkl')
     INTENTS_PATH = os.getenv('INTENTS_PATH', 'A.json')
     MAX_INPUT_LENGTH = int(os.getenv('MAX_INPUT_LENGTH', 500))
-    SESSION_TYPE = os.getenv('SESSION_TYPE', 'filesystem')  # Changed default
-    SESSION_FILE_DIR = os.getenv('SESSION_FILE_DIR', './flask_session')  # New
+    SESSION_TYPE = os.getenv('SESSION_TYPE', 'filesystem')
+    SESSION_FILE_DIR = os.getenv('SESSION_FILE_DIR', './flask_session')
     SECRET_KEY = os.getenv('SECRET_KEY', 'yudcslkknuhiurhqwpzvb')
     RATE_LIMIT = os.getenv('RATE_LIMIT', '5 per minute')
     RATELIMIT_STORAGE_URI = os.getenv(
         'RATELIMIT_STORAGE_URI', 
-        'sqlite:////var/tmp/ratelimits.db'  # Absolute path for Render
+        'sqlite:///ratelimits.db'  # Relative path for better compatibility
     )
-
 
 # Initialize Flask app
 app = Flask(__name__)
 app.config.from_object(Config)
 
-# Configure CORS for your Netlify domain
+# Configure CORS
 CORS(app, resources={
     r"/api/*": {
         "origins": ["https://abrehamyetwale.netlify.app"],
@@ -40,11 +41,16 @@ CORS(app, resources={
     }
 })
 
-# Configure rate limiting
+# Create storage directory
+if app.config['RATELIMIT_STORAGE_URI'].startswith('sqlite:///'):
+    db_path = app.config['RATELIMIT_STORAGE_URI'].split('///')[-1]
+    Path(db_path).parent.mkdir(parents=True, exist_ok=True)
+
+# Initialize rate limiter after creating directories
 limiter = Limiter(
     app=app,
     key_func=get_remote_address,
-    storage_uri=app.config['RATELIMIT_STORAGE_URI'],  # THIS WAS MISSING
+    storage_uri=app.config['RATELIMIT_STORAGE_URI'],
     default_limits=[app.config['RATE_LIMIT']]
 )
 
@@ -241,7 +247,6 @@ def add_security_headers(response):
     return response
 
 if __name__ == '__main__':
-    # Production configuration
     debug_mode = os.getenv('FLASK_DEBUG', 'false').lower() == 'true'
     app.run(
         debug=debug_mode,
