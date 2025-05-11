@@ -1,0 +1,379 @@
+{
+  "intents": [
+    {
+      "tag": "ሰላምታ",
+      "patterns": {
+        "amharic": [
+          "ሄሎ",
+          "ሃይ",
+          "ሰላም",
+          "ሰላም ነው?",
+          "ምን አለ?",
+          "እንዴት ነው",
+          "እንዴት አለህ"
+        ],
+        "english": [
+          "Hello",
+          "Hi",
+          "Greetings",
+          "How'r you?",
+          "What's up?",
+          "How's it going?",
+          "How'r you doing?"
+        ]
+      },
+      "responses": {
+        "amharic": [
+          "ሰላም",
+          "ሰላም ዛሬ ሰለአብርሃም ምን ልንገርዎት?",
+          "ሰላም ሰለአብርሃም ምን ማዎቅ ፈለጉ?"
+        ],
+        "english": [
+          "Hello",
+          "Hi, what can I assist you with today?",
+          "Greetings, how can I help you?"
+        ]
+      }
+    },
+    {
+      "tag": "ደህና ሁን",
+      "patterns": {
+        "amharic": [
+          "በኋላ እንገናኛለን",
+          "ደህና ሁን",
+          "ቻው",
+          "መልካም ቀን",
+          "አመሰግናለሁ"
+        ],
+        "english": [
+          "Goodbye",
+          "Take care",
+          "Have a good day",
+          "Thank you"
+        ]
+      },
+      "responses": {
+        "amharic": [
+          "አሽ፣ መልካም ቀን",
+          "ቻው፣ ሁሌም ላገለግልዎት ዝግጁ ነኝ!",
+          "አሽ፣ ደህና ሁን"
+        ],
+        "english": [
+          "Goodbye, have a great day!",
+          "Take care, I'm always here to assist!",
+          "See you later, stay safe!"
+        ]
+      }
+    },
+    {
+      "tag": "እድሜ",
+      "patterns": {
+        "amharic": [
+          "እድሜህ ስንት ነው",
+          "ስንት አመት ቆየህ?",
+          "ምን ያክል አመት አገልግለሃል?"
+        ],
+        "english": [
+          "How old are you?",
+          "How many years have you lived?",
+          "How long have you been serving?"
+        ]
+      },
+      "responses": {
+        "amharic": [
+          "ከተሰራሁ ገና አንድ ዎር ሆኖኛል",
+          "ከ2017 አ.ም ጀምሮ ሰለአብርሃም አገልግሎት ለመስጠት ነው የተሰራሁት። አናም 1 ዎር ኣስቆጥሪያለው።"
+        ],
+        "english": [
+          "I have been serving for about a year.",
+          "I started serving in 2017 and have been providing assistance since. It's been 1 year now."
+        ]
+      }
+    },
+    {
+      "tag": "ስም",
+      "patterns": {
+        "amharic": [
+          "ስምህ ማን ነው",
+          "ማን ብዬ ልጥራህ",
+          "ስምህ ማን ነው?",
+          "አንተ ማን ነህ?",
+          "ስምህን ንገረኝ"
+        ],
+        "english": [
+          "What is your name?",
+          "What should I call you?",
+          "What’s your name?"
+        ]
+      },
+      "responses": {
+        "amharic": [
+          "ABonly-ቦት ብለው ሊጠሩኝ ይችላሉ!"
+        ],
+        "english": [
+          "You can call me ABonly-Bot."
+        ]
+      }
+    },
+    {
+      "tag": "እርዳታ",
+      "patterns": {
+        "amharic": [
+          "እርዳኝ",
+          "አሞኛል",
+          "ህመም ይሰማኛል",
+          "እያመመኝ ነው",
+          "ክብደቴ እየተለወጠ ነው",
+          "ሞትን የማየት ያህል ይሰማኛል",
+          "አለሁ ትንሽ የሰውነት ሕመም እየተሰማኝ",
+          "ታምሜአለሁ",
+          "ደህና አይደለሁም",
+          "በአጠቃላይ ህመም ይሰማኛል (የህመም ስሜት)"
+        ],
+        "english": [
+          "Help me",
+          "I'm in trouble",
+          "I feel pain",
+          "I'm feeling unwell",
+          "My body is changing",
+          "I am in distress",
+          "I feel like I'm dying",
+          "I have a small pain",
+          "I'm not feeling well",
+          "I feel ill overall"
+        ]
+      },
+      "responses": {
+        "amharic": [
+          "እሽ ይረጋጉና የሚሰማወትን ስሜት ይንገሩኝ?",
+          "እሽ ይረጋጉና ምን ምን እንደሚሰማዎት በደንብ ይንገሩኝ?"
+        ],
+        "english": [
+          "I'm sorry to hear that. Can you describe the pain you're feeling?",
+          "Please let me know more about what you're experiencing, and I’ll do my best to assist."
+        ]
+      }
+    },
+    {
+      "tag": "cont_loop_greeting2",
+      "patterns": {
+        "amharic": [
+          "ምን ማድረግ ትችላለህ?",
+          "በምን ልትረዳኝ ትችላለህ?"
+        ],
+        "english": [
+          "What can you do?",
+          "How can you help me?"
+        ]
+      },
+      "responses": {
+        "amharic": [
+          "ጥቃቅን ጉዳቶችን ለማከም የመጀመሪያ እርምጃዎችን ልረዳህ እችላለሁ። ወይም ምንም አይነት ምልክት ከታየህ ከእኔ ጋር ልታካፍላቸው ትችላለህ። በዚህ መንገድ ስለ አንዳንድ በሽታ ተጨማሪ መረጃ መስጠት እችላለሁ.",
+          "ስለ ጤና ተቋማቺን መረጃ መስጠት እቺላለሁ"
+        ],
+        "english": [
+          "I can assist with various health-related matters or give you information on various topics. Feel free to ask!",
+          "I can provide health-related information and assist with any other queries you may have."
+        ]
+      }
+    },
+    {
+      "tag": "unknown",
+      "patterns": {
+        "amharic": [""],
+        "english": [""]
+      },
+      "responses": {
+        "amharic": [
+          "ይቅርታ ሊገባኝ አልቻለም። እባክዎ እንደገና ይሞክሩ።"
+        ],
+        "english": [
+          "Sorry, I didn't understand. Please try again."
+        ]
+      }
+    },
+    {
+      "tag": "cont_loop_yes",
+      "patterns": {
+        "amharic": [
+          "አዎ",
+          "አዎ, እባክዎን"
+        ],
+        "english": [
+          "Yes",
+          "Yes, please"
+        ]
+      },
+      "responses": {
+        "amharic": [
+          "እባክዎ የሕመም ምልክቶችዎን ይንገሩኝ",
+          "እባክዎ ተጨማሪ መረጃ ይስጡኝ"
+        ],
+        "english": [
+          "Please tell me the symptoms you are experiencing.",
+          "Provide me with more details about what you're going through."
+        ]
+      }
+    },
+    {
+      "tag": "cont_loop_no",
+      "patterns": {
+        "amharic": [
+          "አይ",
+          "አይ, አመሰግናለሁ."
+        ],
+        "english": [
+          "No",
+          "No, thank you"
+        ]
+      },
+      "responses": {
+        "amharic": [
+          "እሽ አገልግሎታችንን ስለተጠቀሙ እናመሰኛለን"
+        ],
+        "english": [
+          "Thank you for using our service. Feel free to reach out anytime!"
+        ]
+      }
+    },
+    {
+      "tag": "የዶክተር_መረጃ",
+      "patterns": {
+        "amharic": [
+          "ቀጠሮ መያዝ እፈልጋለሁ",
+          "መረጃ ማግኘት እፈልጋለሁ",
+          "መረጃ"
+        ],
+        "english": [
+          "I want to schedule an appointment",
+          "I need information",
+          "Info"
+        ]
+      },
+      "responses": {
+        "amharic": [
+          "ቀጠሮ ለማስያዝ ከዚ በፊት የተቋማቺን ደንምበኝ ከነበሩ usernam እና passwored ተጠቅመው ያስዙ ፤ ከዚ በፊት የተቋማቺን ደንበኛ ካልሆኑ ወደ ተቋማችን በአካል በመገኘት username እና passwored መውሰድ አለብዎት"
+        ],
+        "english": [
+          "To schedule an appointment, please use your username and password to log in. If you don't have an account, you can visit the clinic directly to register."
+        ]
+      }
+    },
+    {
+      "tag": "አብርሃም",
+      "patterns": {
+        "amharic": [
+          "የአብርሃም ሰልክ",
+          "የአብርሃም ሙሉ ሰም"
+        ],
+        "english": [
+          "Abraham's phone number",
+          "What’s Abraham's full name?"
+        ]
+      },
+      "responses": {
+        "amharic": [
+          "አብርሃም የትዋለ ገሰሰ, 0951217455"
+        ],
+        "english": [
+          "Abraham's phone number is 0951217455."
+        ]
+      }
+    },
+    {
+      "tag": "farewell2",
+      "patterns": {
+        "amharic": [
+          "በኋላ እንገናኛለን",
+          "ጥሩ ውይይት ካንተ ጋር ነበረኝ"
+        ],
+        "english": [
+          "We will meet later",
+          "Goodbye",
+          "It was great talking to you",
+          "See you next time"
+        ]
+      },
+      "responses": {
+        "amharic": [
+          "እሽ ጥሩ የፈለጉትን መረጃ አንዳገኙ ተስፋ አደርጋለው።"
+        ],
+        "english": [
+          "Take care, and I hope you found the information helpful."
+        ]
+      }
+    },
+    {
+      "tag": "thank_you",
+      "patterns": {
+        "amharic": [
+          "አመሰግናለሁ",
+          "የሰጠህኝ መረጃ ጠቃሚ ነበር",
+          "አሪፍ፣ አመሰግናለሁ",
+          "ስለረዱኝ አመሰግናለሁ"
+        ],
+        "english": [
+          "Thank you",
+          "Your information was helpful",
+          "Thanks, I appreciate it",
+          "I’m grateful for your help"
+        ]
+      },
+      "responses": {
+        "amharic": [
+          "ስለተደሰቱ ደስተኛ ነኝ!",
+          "በማንኛውም ጊዜ!",
+          "የእኔ ደስታ እርሰዎን ማገልገል ነው."
+        ],
+        "english": [
+          "I'm glad I could assist you!",
+          "You're always welcome!",
+          "It's my pleasure to help you."
+        ]
+      }
+    },
+    {
+      "tag": "no_answer",
+      "patterns": {
+        "amharic": [""],
+        "english": [""]
+      },
+      "responses": {
+        "amharic": [
+          "ይቅርታ አልገባኝም",
+          "እባክህ ተጨማሪ መረጃ ስጠኝ",
+          "እንደገባኝ እርግጠኛ አይደለሁም።"
+        ],
+        "english": [
+          "Sorry, I didn't quite catch that. Can you provide more details?",
+          "I’m not sure I understood. Can you try again?"
+        ]
+      }
+    },
+    {
+      "tag": "options",
+      "patterns": {
+        "amharic": [
+          "እንዴት ልትረዱኝ ትችላላችሁ?",
+          "ምን ልታደርግ ትችላለህ?",
+          "የምን እርዳታ ታቀርባለህ?",
+          "እንዴት መርዳት ትችላለህ?",
+          "ምን ድጋፍ ነው የሚቀርበው"
+        ],
+        "english": [
+          "How can you assist me?",
+          "What can you do?",
+          "What kind of help can you provide?"
+        ]
+      },
+      "responses": {
+        "amharic": [
+          "ስለ አብርሃም ከጠየቁኝ, እየጠየቁት ባለው ጥያቄ ሰለአብርሃም መረጃ በመስጠት እረዳዎታለሁ. ስለአብርሃም የተፈቀደልኝን መረጃ መስጠት እቺላለህ."
+        ],
+        "english": [
+          "I can help with providing information about Abraham, or assist with any health-related queries you may have."
+        ]
+      }
+    }
+  ]
+}
