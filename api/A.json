@@ -82,7 +82,7 @@
       "responses": {
         "amharic": [
           "ከተሰራሁ ገና አንድ ዎር ሆኖኛል",
-          "ከ2017 አ.ም ጀምሮ ሰለአብርሃም አገልግሎት ለመስጠት ነው የተሰራሁት። አናም 1 ዎር ኣስቆጥሪያለው።"
+          "ከ2017 አ.ም ጀምሮ ሰለአብርሃም አገልግሎት ለመስጠት ነው የተሰራሁት። አናም 2 ዎር ኣስቆጥሪያለው።"
         ],
         "english": [
           "I have been serving for about a year.",
@@ -116,41 +116,181 @@
       }
     },
     {
-      "tag": "እርዳታ",
+      "tag": "education",
       "patterns": {
         "amharic": [
-          "እርዳኝ",
-          "አሞኛል",
-          "ህመም ይሰማኛል",
-          "እያመመኝ ነው",
-          "ክብደቴ እየተለወጠ ነው",
-          "ሞትን የማየት ያህል ይሰማኛል",
-          "አለሁ ትንሽ የሰውነት ሕመም እየተሰማኝ",
-          "ታምሜአለሁ",
-          "ደህና አይደለሁም",
-          "በአጠቃላይ ህመም ይሰማኛል (የህመም ስሜት)"
+          "ትምህርትህ ምንድን ነው",
+          "የት ተማርክ",
+          "ዲግሪህ ምንድን ነው",
+          "የት ነው የተመረቅከው"
         ],
         "english": [
-          "Help me",
-          "I'm in trouble",
-          "I feel pain",
-          "I'm feeling unwell",
-          "My body is changing",
-          "I am in distress",
-          "I feel like I'm dying",
-          "I have a small pain",
-          "I'm not feeling well",
-          "I feel ill overall"
+          "What is your education?",
+          "Where did you study?",
+          "What degree do you have?",
+          "What's your educational background?"
         ]
       },
       "responses": {
         "amharic": [
-          "እሽ ይረጋጉና የሚሰማወትን ስሜት ይንገሩኝ?",
-          "እሽ ይረጋጉና ምን ምን እንደሚሰማዎት በደንብ ይንገሩኝ?"
+          "በኮምፒውተር ሳይንስ የባችለር ዲግሪ ከዎላይታ ሶዶ ዩኒቨርሲቲ ተመርቄያለሁ (2020-2025)",
+          "የኮምፒውተር ሳይንስ ባችለር ዲግሪ ባለንበረ ነኝ"
         ],
         "english": [
-          "I'm sorry to hear that. Can you describe the pain you're feeling?",
-          "Please let me know more about what you're experiencing, and I’ll do my best to assist."
+          "I hold a Bachelor's Degree in Computer Science from Wolaita Sodo University (2020-2025)",
+          "I graduated with a B.Sc. in Computer Science"
+        ]
+      }
+    },
+    {
+      "tag": "skills",
+      "patterns": {
+        "amharic": [
+          "ምን ምን ችሎታዎች አሉህ",
+          "ምን ዓይነት የቴክኖሎጂ ችሎታ አለህ",
+          "በምን ቋንቋዎች ትጽፋለህ"
+        ],
+        "english": [
+          "What skills do you have?",
+          "What technologies do you know?",
+          "What programming languages can you use?"
+        ]
+      },
+      "responses": {
+        "amharic": [
+          "በC++፣ Java፣ Python፣ PHP፣ JavaScript፣ React.js፣ Node.js፣ HTML & CSS እችላለሁ። የሙሉ ስቴክ ዴቨሎፐር ነኝ።",
+          "የፊርማዬ ችሎታዎች፡ ፓይዘን፣ ጃቫ፣ ሬክት፣ ኖድ፣ እና የተለያዩ የዌብ ቴክኖሎጂዎች"
+        ],
+        "english": [
+          "My skills include C++, Java, Python, PHP, JavaScript, React.js, Node.js, HTML & CSS. I'm a full-stack developer.",
+          "I'm proficient in Python, Java, React, Node, and various web technologies"
+        ]
+      }
+    },
+    {
+      "tag": "experience",
+      "patterns": {
+        "amharic": [
+          "ምን ዓይነት ልምድ አለህ",
+          "በየት ነው የሰራኸው",
+          "የስራ ልምድህን ንገረኝ"
+        ],
+        "english": [
+          "What experience do you have?",
+          "Where have you worked?",
+          "Tell me about your work history"
+        ]
+      },
+      "responses": {
+        "amharic": [
+          "እንደ ቴክኒካል ሱፖርት ኢንጅነር በአይኮን ቴክ ቴሬዲንግ ሰርቻለሁ (ጁን-ኦገስት 2024)",
+          "የቴክኒካል ድጋፍ እና የሶፍትዌር አሰራር ልምድ አለኝ"
+        ],
+        "english": [
+          "I worked as a Technical Support Engineer at Icon Tech Trading (June-August 2024)",
+          "I have experience in technical support and software troubleshooting"
+        ]
+      }
+    },
+    {
+      "tag": "projects",
+      "patterns": {
+        "amharic": [
+          "ምን ዓይነት ፕሮጀክት አድርገሃል",
+          "የትኛውን ፕሮጀክት ነው ያበረከትከው",
+          "ስለ ፕሮጀክቶችህ ንገረኝ"
+        ],
+        "english": [
+          "What projects have you done?",
+          "Tell me about your notable projects",
+          "What have you built?"
+        ]
+      },
+      "responses": {
+        "amharic": [
+          "የጤና እንክብካቤ ስርዓት ከቻትቦት ጋር ፕሮጀክት አድርጌያለሁ። በዩኒቨርሲቴው 17ኛ የተመረቁ ሰዎች ስነ-ስርዓት ላይ ተዘጋጅቼ ቀርቤያለሁ።",
+          "የህክምና አስተዳደር ሲስተም ከቻትቦት ጋር አዘጋጅቻለሁ"
+        ],
+        "english": [
+          "I developed a Healthcare Management System with Chatbot which was presented at my university's 17th graduation ceremony exhibition",
+          "My major project is a Healthcare Management System integrated with AI chatbot functionality"
+        ]
+      }
+    },
+    {
+      "tag": "certificates",
+      "patterns": {
+        "amharic": [
+          "ምን ዓይነት የምስክር ወረቀቶች አሉህ",
+          "ስለ ምስክር ወረቀቶችህ ንገረኝ",
+          "ምን ዓይነት ማረጋገጫዎች አግኝተሃል"
+        ],
+        "english": [
+          "What certificates do you have?",
+          "Tell me about your certifications",
+          "What awards have you received?"
+        ]
+      },
+      "responses": {
+        "amharic": [
+          "ከዎላይታ ሶዶ ዩኒቨርሲቲ ለቀረበው የቴክኖሎጂ ፕሮጀክት የተገለጸ ምስክር ወረቀት አግኝቻለሁ (ፌብሩወሪ 2025)",
+          "ለቴዝ አዘጋጅታ እና የውጤት ፈተና ስልጠና የተሳተፍኩበት ምስክር ወረቀት አለኝ"
+        ],
+        "english": [
+          "I received a Certificate of Recognition from Wolaita Sodo University for my technology project (February 2025)",
+          "I have certificates for thesis preparation training and academic support programs"
+        ]
+      }
+    },
+    {
+      "tag": "contact",
+      "patterns": {
+        "amharic": [
+          "እንዴት እንደምናገኝህ",
+          "የእውቂያ መረጃህን ንገረኝ",
+          "ኢሜልህ ምንድን ነው",
+          "ስልክ ቁጥርህ ምንድን ነው"
+        ],
+        "english": [
+          "How can I contact you?",
+          "What's your contact information?",
+          "What's your email?",
+          "What's your phone number?"
+        ]
+      },
+      "responses": {
+        "amharic": [
+          "ኢሜሌ: abrehamyetwale@gmail.com | ስልክ: +251951217455 | ዌብሳይት: abrehamyetwale.netlify.app",
+          "በኢሜል ወይም ስልክ ሊያገኙኝ ትችላላችሁ። ዝርዝሮች: ኢሜል: abrehamyetwale@gmail.com, ስልክ: 0951217455"
+        ],
+        "english": [
+          "Email: abrehamyetwale@gmail.com | Phone: +251951217455 | Website: abrehamyetwale.netlify.app",
+          "You can reach me via email or phone. Details: Email: abrehamyetwale@gmail.com, Phone: 0951217455"
+        ]
+      }
+    },
+    {
+      "tag": "github",
+      "patterns": {
+        "amharic": [
+          "ጊትሃብ አለህ?",
+          "የጊትሃብ ሊንክህን ንገረኝ",
+          "የኮድ ምሳሌዎችህን የት ማግኘት እችላለሁ"
+        ],
+        "english": [
+          "Do you have GitHub?",
+          "What's your GitHub link?",
+          "Where can I see your code samples?"
+        ]
+      },
+      "responses": {
+        "amharic": [
+          "የጊትሃብ ፕሮፋይሌ: https://github.com/ABREHAMonly",
+          "ኮዶቼን በጊትሃብ ላይ ማየት ትችላላችሁ: https://github.com/ABREHAMonly"
+        ],
+        "english": [
+          "My GitHub profile: https://github.com/ABREHAMonly",
+          "You can view my code samples on GitHub: https://github.com/ABREHAMonly"
         ]
       }
     },
@@ -237,7 +377,7 @@
       }
     },
     {
-      "tag": "የዶክተር_መረጃ",
+      "tag": "መረጃ",
       "patterns": {
         "amharic": [
           "ቀጠሮ መያዝ እፈልጋለሁ",
