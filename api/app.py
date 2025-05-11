@@ -21,6 +21,8 @@ class Config:
     SESSION_FILE_DIR = os.getenv('SESSION_FILE_DIR', './flask_session')  # New
     SECRET_KEY = os.getenv('SECRET_KEY', 'yudcslkknuhiurhqwpzvb')
     RATE_LIMIT = os.getenv('RATE_LIMIT', '5 per minute')
+    RATELIMIT_STORAGE_URI = os.getenv('RATELIMIT_STORAGE_URI', 'memory://')
+
 
 # Initialize Flask app
 app = Flask(__name__)
