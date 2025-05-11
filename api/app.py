@@ -21,6 +21,10 @@ class Config:
     SESSION_FILE_DIR = os.getenv('SESSION_FILE_DIR', './flask_session')  # New
     SECRET_KEY = os.getenv('SECRET_KEY', 'yudcslkknuhiurhqwpzvb')
     RATE_LIMIT = os.getenv('RATE_LIMIT', '5 per minute')
+    RATELIMIT_STORAGE_URI = os.getenv(
+        'RATELIMIT_STORAGE_URI', 
+        'sqlite:////var/tmp/ratelimits.db'  # Absolute path for Render
+    )
 
 
 # Initialize Flask app
@@ -40,6 +44,7 @@ CORS(app, resources={
 limiter = Limiter(
     app=app,
     key_func=get_remote_address,
+    storage_uri=app.config['RATELIMIT_STORAGE_URI'],  # THIS WAS MISSING
     default_limits=[app.config['RATE_LIMIT']]
 )
 
@@ -47,6 +52,37 @@ limiter = Limiter(
 if app.config['SESSION_TYPE'] == 'filesystem':
     os.makedirs(app.config['SESSION_FILE_DIR'], exist_ok=True)
 Session(app)
+
+
+if app.config['RATELIMIT_STORAGE_URI'].startswith('sqlite:///'):
+    from sqlalchemy.engine import Engine
+    from sqlalchemy import event
+    from pathlib import Path
+    
+    db_path = app.config['RATELIMIT_STORAGE_URI'].split('///')[-1]
+    Path(db_path).parent.mkdir(parents=True, exist_ok=True)
+    
+    # Enable SQLite foreign key support
+    @event.listens_for(Engine, "connect")
+    def set_sqlite_pragma(dbapi_connection, connection_record):
+        cursor = dbapi_connection.cursor()
+        cursor.execute("PRAGMA foreign_keys=ON")
+        cursor.close()
+
+@app.route('/')
+def health_check():
+    try:
+        # Test database connection
+        limiter.storage.get("test")
+        db_status = "connected"
+    except Exception as e:
+        db_status = f"error: {str(e)}"
+    
+    return jsonify({
+        "status": "healthy",
+        "version": "1.0.0",
+        "rate_limit_db": db_status
+    })
 
 # Set up logging
 logging.basicConfig(
