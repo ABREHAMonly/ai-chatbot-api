@@ -21,6 +21,7 @@ class Config:
     SESSION_FILE_DIR = os.getenv('SESSION_FILE_DIR', './flask_session')  # New
     SECRET_KEY = os.getenv('SECRET_KEY', 'yudcslkknuhiurhqwpzvb')
     RATE_LIMIT = os.getenv('RATE_LIMIT', '5 per minute')
+    RATELIMIT_STORAGE_URI = os.getenv('RATELIMIT_STORAGE_URI', 'memory://')
 
 
 # Initialize Flask app
@@ -40,6 +41,7 @@ CORS(app, resources={
 limiter = Limiter(
     app=app,
     key_func=get_remote_address,
+    storage_uri=app.config['RATELIMIT_STORAGE_URI'],
     default_limits=[app.config['RATE_LIMIT']]
 )
 
@@ -124,6 +126,10 @@ def handle_personalization(user_input, context, language):
         }
     
     return None
+
+@app.route('/')
+def health_check():
+    return jsonify({"status": "healthy", "version": "1.0.0"})
 
 @app.route('/api/chat', methods=['POST'])
 @limiter.limit(app.config['RATE_LIMIT'])
