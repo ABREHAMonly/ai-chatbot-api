@@ -408,11 +408,13 @@
       "patterns": {
         "amharic": [
           "አይ",
-          "አይ, አመሰግናለሁ."
+          "አይ, አመሰግናለሁ.",
+          "እሽ"
         ],
         "english": [
           "No",
-          "No, thank you"
+          "No, thank you",
+          "ok"
         ]
       },
       "responses": {
