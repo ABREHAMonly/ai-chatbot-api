@@ -7,9 +7,11 @@ __pycache__/
 
 # Environment
 venv/
-.env  # Remove this line if you want to commit .env
+.env
 
-# Session files
+# Data files
+*.pkl
+*.db
 flask_session/
 
 # Logs

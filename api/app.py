@@ -11,7 +11,6 @@ from flask_cors import CORS
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from flask_session import Session
-from sqlalchemy import create_engine
 from pathlib import Path
 
 # Configuration
@@ -25,7 +24,7 @@ class Config:
     RATE_LIMIT = os.getenv('RATE_LIMIT', '5 per minute')
     RATELIMIT_STORAGE_URI = os.getenv(
         'RATELIMIT_STORAGE_URI', 
-        'sqlite:///ratelimits.db'  # Relative path for better compatibility
+        'sqlite:///ratelimits.db'
     )
 
 # Initialize Flask app
@@ -41,12 +40,13 @@ CORS(app, resources={
     }
 })
 
-# Create storage directory
+# Create directories for storage
+Path(app.config['SESSION_FILE_DIR']).mkdir(parents=True, exist_ok=True)
 if app.config['RATELIMIT_STORAGE_URI'].startswith('sqlite:///'):
     db_path = app.config['RATELIMIT_STORAGE_URI'].split('///')[-1]
     Path(db_path).parent.mkdir(parents=True, exist_ok=True)
 
-# Initialize rate limiter after creating directories
+# Initialize rate limiter
 limiter = Limiter(
     app=app,
     key_func=get_remote_address,
@@ -55,39 +55,14 @@ limiter = Limiter(
 )
 
 # Configure server-side sessions
-if app.config['SESSION_TYPE'] == 'filesystem':
-    os.makedirs(app.config['SESSION_FILE_DIR'], exist_ok=True)
 Session(app)
-
-
-if app.config['RATELIMIT_STORAGE_URI'].startswith('sqlite:///'):
-    from sqlalchemy.engine import Engine
-    from sqlalchemy import event
-    from pathlib import Path
-    
-    db_path = app.config['RATELIMIT_STORAGE_URI'].split('///')[-1]
-    Path(db_path).parent.mkdir(parents=True, exist_ok=True)
-    
-    # Enable SQLite foreign key support
-    @event.listens_for(Engine, "connect")
-    def set_sqlite_pragma(dbapi_connection, connection_record):
-        cursor = dbapi_connection.cursor()
-        cursor.execute("PRAGMA foreign_keys=ON")
-        cursor.close()
 
 @app.route('/')
 def health_check():
-    try:
-        # Test database connection
-        limiter.storage.get("test")
-        db_status = "connected"
-    except Exception as e:
-        db_status = f"error: {str(e)}"
-    
     return jsonify({
-        "status": "healthy",
+        "status": "healthy", 
         "version": "1.0.0",
-        "rate_limit_db": db_status
+        "storage": app.config['RATELIMIT_STORAGE_URI']
     })
 
 # Set up logging

@@ -1,6 +1,6 @@
 Flask==2.3.2
 Flask-Cors==3.0.10
-Flask-Limiter[sqla]==2.8.1  # Changed from 'sqlalchemy' to 'sqla'
+Flask-Limiter[sqla]==2.8.1
 Flask-Session==0.4.0
 SQLAlchemy==1.4.46
 fuzzywuzzy==0.18.0
