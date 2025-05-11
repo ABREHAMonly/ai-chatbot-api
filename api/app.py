@@ -16,7 +16,7 @@ class Config:
     INTENTS_PATH = os.getenv('INTENTS_PATH', 'A.json')
     MAX_INPUT_LENGTH = int(os.getenv('MAX_INPUT_LENGTH', 500))
     SESSION_TYPE = os.getenv('SESSION_TYPE', 'filesystem')
-    SESSION_FILE_DIR = os.getenv('SESSION_FILE_DIR', './flask_session')
+    SESSION_FILE_DIR = os.getenv('SESSION_FILE_DIR', '/tmp/flask_session')
     SECRET_KEY = os.getenv('SECRET_KEY', 'yudcslkknuhiurhqwpzvb')
 
 # Initialize Flask app
@@ -34,7 +34,12 @@ CORS(app, resources={
 
 # Configure server-side sessions
 if app.config['SESSION_TYPE'] == 'filesystem':
-    os.makedirs(app.config['SESSION_FILE_DIR'], exist_ok=True)
+    try:
+        os.makedirs(app.config['SESSION_FILE_DIR'], exist_ok=True)
+        logging.info(f"Session directory created at {app.config['SESSION_FILE_DIR']}")
+    except Exception as e:
+        logging.error(f"Failed to create session directory: {str(e)}")
+        raise e  # Halt app if session dir can't be created
 Session(app)
 
 # Set up logging
@@ -43,6 +48,10 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s %(levelname)s: %(message)s'
 )
+
+@app.route('/')
+def home():
+    return jsonify({'status': 'OK'}), 200
 
 def detect_language(text):
     """Detect Amharic or English with improved regex"""
