@@ -81,12 +81,12 @@
       },
       "responses": {
         "amharic": [
-          "ከተሰራሁ ገና አንድ ዎር ሆኖኛል",
-          "ከ2017 አ.ም ጀምሮ ሰለአብርሃም አገልግሎት ለመስጠት ነው የተሰራሁት። አናም 2 ዎር ኣስቆጥሪያለው።"
+          "ከተሰራሁ ገና ሶስት ዎር ሆኖኛል",
+          "ከ2017 አ.ም ጀምሮ ሰለአብርሃም አገልግሎት ለመስጠት ነው የተሰራሁት። አናም ሶስት ዎር ኣስቆጥሪያለው።"
         ],
         "english": [
-          "I have been serving for about a year.",
-          "I started serving in 2017 and have been providing assistance since. It's been 1 year now."
+          "I have been serving for about three months.",
+          "I started serving in 2025 and have been providing assistance since. It's been three months now."
         ]
       }
     },
@@ -208,7 +208,7 @@
       },
       "responses": {
         "amharic": [
-          "የጤና እንክብካቤ ስርዓት ከቻትቦት ጋር ፕሮጀክት አድርጌያለሁ። በዩኒቨርሲቴው 17ኛ የተመረቁ ሰዎች ስነ-ስርዓት ላይ ተዘጋጅቼ ቀርቤያለሁ።",
+          "የጤና እንክብካቤ ስርዓት ከቻትቦት ጋር ፕሮጀክት ሰርቻለሁ። በዩኒቨርሲቴው 17ኛ የተመረቁ ሰዎች ስነ-ስርዓት ላይ ተዘጋጅቼ ቀርቤያለሁ።",
           "የህክምና አስተዳደር ሲስተም ከቻትቦት ጋር አዘጋጅቻለሁ"
         ],
         "english": [
@@ -308,12 +308,12 @@
       },
       "responses": {
         "amharic": [
-          "ጥቃቅን ጉዳቶችን ለማከም የመጀመሪያ እርምጃዎችን ልረዳህ እችላለሁ። ወይም ምንም አይነት ምልክት ከታየህ ከእኔ ጋር ልታካፍላቸው ትችላለህ። በዚህ መንገድ ስለ አንዳንድ በሽታ ተጨማሪ መረጃ መስጠት እችላለሁ.",
-          "ስለ ጤና ተቋማቺን መረጃ መስጠት እቺላለሁ"
+          "ስለ አብርሃም መረጃ በመስጠት እረዳዎታለሁ. ",
+          "ስለአብርሃም የተፈቀደልኝን መረጃ መስጠት እቺላለህ."
         ],
         "english": [
-          "I can assist with various health-related matters or give you information on various topics. Feel free to ask!",
-          "I can provide health-related information and assist with any other queries you may have."
+          "I can assist by providing information about Abreham. Feel free to ask!",
+          "I can provide the information i have about Abreham."
         ]
       }
     },
@@ -346,11 +346,11 @@
       },
       "responses": {
         "amharic": [
-          "እባክዎ የሕመም ምልክቶችዎን ይንገሩኝ",
-          "እባክዎ ተጨማሪ መረጃ ይስጡኝ"
+          "እባክዎ የሚፈልጉትን ይንገሩኝ",
+          "እባክዎ ለመልሱ ተጨማሪ መረጃ ይስጡኝ"
         ],
         "english": [
-          "Please tell me the symptoms you are experiencing.",
+          "Please tell me what you want.",
           "Provide me with more details about what you're going through."
         ]
       }
@@ -377,34 +377,12 @@
       }
     },
     {
-      "tag": "መረጃ",
-      "patterns": {
-        "amharic": [
-          "ቀጠሮ መያዝ እፈልጋለሁ",
-          "መረጃ ማግኘት እፈልጋለሁ",
-          "መረጃ"
-        ],
-        "english": [
-          "I want to schedule an appointment",
-          "I need information",
-          "Info"
-        ]
-      },
-      "responses": {
-        "amharic": [
-          "ቀጠሮ ለማስያዝ ከዚ በፊት የተቋማቺን ደንምበኝ ከነበሩ usernam እና passwored ተጠቅመው ያስዙ ፤ ከዚ በፊት የተቋማቺን ደንበኛ ካልሆኑ ወደ ተቋማችን በአካል በመገኘት username እና passwored መውሰድ አለብዎት"
-        ],
-        "english": [
-          "To schedule an appointment, please use your username and password to log in. If you don't have an account, you can visit the clinic directly to register."
-        ]
-      }
-    },
-    {
       "tag": "አብርሃም",
       "patterns": {
         "amharic": [
           "የአብርሃም ሰልክ",
-          "የአብርሃም ሙሉ ሰም"
+          "የአብርሃም ሙሉ ሰም",
+          "አብርሃም"
         ],
         "english": [
           "Abraham's phone number",
