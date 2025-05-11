@@ -18,10 +18,18 @@ class Config:
     SESSION_TYPE = os.getenv('SESSION_TYPE', 'filesystem')
     SESSION_FILE_DIR = os.getenv('SESSION_FILE_DIR', '/tmp/flask_session')
     SECRET_KEY = os.getenv('SECRET_KEY', 'yudcslkknuhiurhqwpzvb')
+    SESSION_COOKIE_NAME = 'ai_chatbot_session'
+    SESSION_COOKIE_HTTPONLY = True
+    SESSION_COOKIE_SECURE = True  # Enable in production
+    SESSION_COOKIE_SAMESITE = 'Lax'
 
 # Initialize Flask app
 app = Flask(__name__)
 app.config.from_object(Config)
+
+# Initialize session before CORS
+server_session = Session()
+server_session.init_app(app) 
 
 # Configure CORS
 CORS(app, resources={
