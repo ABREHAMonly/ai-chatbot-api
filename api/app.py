@@ -18,7 +18,7 @@ class Config:
     MAX_INPUT_LENGTH = int(os.getenv('MAX_INPUT_LENGTH', 500))
     SESSION_TYPE = os.getenv('SESSION_TYPE', 'filesystem')
     SESSION_FILE_DIR = os.getenv('SESSION_FILE_DIR', './flask_session')
-    SECRET_KEY = os.getenv('SECRET_KEY', 'yudcslkknuhiurhqwpzvb')
+    SECRET_KEY = os.getenv('SECRET_KEY', '')
     SESSION_COOKIE_NAME = 'ai_chatbot_session'
     SESSION_COOKIE_HTTPONLY = True
     SESSION_COOKIE_SECURE = True  # Enable in production
